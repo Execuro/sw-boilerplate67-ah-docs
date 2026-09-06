@@ -9,13 +9,28 @@ resync: Update when a page type, frontmatter field, or status value changes; rec
 tags: [conventions, meta]
 ---
 
+[Wiki home](index.md) › Conventions
+
 # Documentation conventions
 
-Rules for every page in this wiki, whether edited by a human or written by the `sw-document-feature` skill.
+The rules every page here follows, whether a person or the `sw-document-feature` skill wrote it.
+
+## Page shape
+
+Every page opens with a breadcrumb line, then its title, then one or two sentences of plain prose
+saying what the page is for. Maintenance metadata (scope, last synced, verified against, how to
+re-sync) sits in a single italic line at the *bottom* of the page, not above the content.
+
+Keep pages short: one topic per page, no paragraph longer than about four lines, prefer a table or
+bullets to prose. If a section would only contain a placeholder, leave it out until there is
+something true to write.
 
 ## Folders and surfaces
 
-One page per surface: `domains/<domain>/administration/<feature>.md` and `.../storefront/<feature>.md`, same slug on both halves, never merged. The *why* lives only in the domain index feature table; pages link to `../index.md#features`. `domains/platform/` is the cross-cutting domain without surfaces.
+One page per surface: `domains/<domain>/administration/<feature>.md` and
+`.../storefront/<feature>.md`, same slug on both halves, never merged. The *why* lives only in the
+domain index feature table; pages link to `../index.md#features`. `domains/platform/` is the
+cross-cutting domain, and has no surfaces.
 
 ## Page types
 
@@ -23,14 +38,14 @@ One page per surface: `domains/<domain>/administration/<feature>.md` and `.../st
 |---|---|---|
 | Feature page | `domains/<domain>/<surface>/<feature>.md` | `.claude/skills/sw-document-feature/reference/templates/feature-page.md` |
 | Domain index | `domains/<domain>/index.md` | `.claude/skills/sw-document-feature/reference/templates/domain-index.md` |
-| Platform page | `domains/platform/<topic>.md` | header block only: Purpose / Scope / Last synced / Verified against / How to re-sync |
+| Platform page | `domains/platform/<topic>.md` | no template — breadcrumb, prose intro, content sections, footer line |
 | ADR | `adr/YYYY-MM-DD-title.md` | `.claude/skills/sw-document-feature/reference/templates/adr.md` |
 
 ## Frontmatter
 
-- All pages: `title`, `tags[]`; durable pages also `type` (index|project|platform|domain|reference), `purpose`, `scope`, `resync`, `last_synced` (YYYY-MM-DD), `verified_against` (`Shopware <X.Y.Z>`).
-- Feature pages: `domain`, `surface` (administration|storefront), `feature` (slug), `status`, `extension` (name in `custom/`, composer package, or null), `spec`, `prd` (path or null), `related[]`.
-- ADRs: `title`, `date`, `area` (domain slug | platform | process), `tags[]`, `authors[]`, `status` (accepted|superseded|deprecated — `proposed`/`rejected` exist only in WIP files under `specs/`); exempt from `last_synced`/`verified_against`. Pages promoted from `specs/*-adr-*.md` additionally carry `id`, `prd`, `spec`, `owner`, `promoted_from` (the specs path), `promoted` (date); status changes after promotion are made here by people.
+- All pages: `title`, `tags[]`; durable pages also `type` (index\|project\|platform\|domain\|reference), `purpose`, `scope`, `resync`, `last_synced` (YYYY-MM-DD), `verified_against` (`Shopware <X.Y.Z>`).
+- Feature pages: `domain`, `surface` (administration\|storefront), `feature` (slug), `status`, `extension` (name in `custom/`, composer package, or null), `spec`, `prd` (path or null), `related[]`.
+- ADRs: `title`, `date`, `area` (domain slug \| platform \| process), `tags[]`, `authors[]`, `status` (accepted\|superseded\|deprecated — `proposed`/`rejected` exist only in WIP files under `specs/`); exempt from `last_synced`/`verified_against`. Pages promoted from `specs/*-adr-*.md` additionally carry `id`, `prd`, `spec`, `owner`, `promoted_from` (the specs path), `promoted` (date); status changes after promotion are made here by people.
 
 ## Status
 
@@ -40,17 +55,33 @@ One page per surface: `domains/<domain>/administration/<feature>.md` and `.../st
 
 ## Reference code, don't restate it
 
-No code listings, class lists, or Twig markup. A *Developer* section contains exactly: where it lives (extension, paths, entities), extension points used, key decisions and why, configuration, how to debug/observe, gotchas. Optional append-only `## Decision Log` after *Related*.
+No code listings, class lists, or Twig markup. A *Developer* section contains exactly: where it
+lives (extension, paths, entities), extension points used, key decisions and why, configuration,
+how to debug/observe, gotchas. An append-only `## Decision Log` may follow *Related*.
 
 ## Where decisions go
 
-Feature-level technical decisions → the *Developer › Decisions* bullets of the feature page. Business rules → the "Why" column of the domain index feature table. `adr/` (with `area:`, tag `business` for business rules) is the single source of truth for accepted and built decisions: WIP ADRs are drafted by `sw-design-solution` into `specs/*-adr-*.md` on a person's confirmation and promoted here once accepted and implemented, or provided by a person as accepted; ADRs are never generated by tooling.
+Feature-level technical decisions → the *Developer › Decisions* bullets of the feature page.
+Business rules → the "Why" column of the domain index feature table. `adr/` (with `area:`, tag
+`business` for business rules) is the single source of truth for accepted and built decisions: WIP
+ADRs are drafted by `sw-design-solution` into `specs/*-adr-*.md` on a person's confirmation and
+promoted here once accepted and implemented, or provided by a person as accepted; ADRs are never
+generated by tooling.
 
 ## Wiki mechanics
 
 - Folder landing pages are `index.md`; relative links only, never absolute repo paths as links.
-- Every page starts with YAML front matter containing at least `title`; no `layout`/`nav` keys (theme-agnostic — renders as plain Markdown even without Jekyll).
-- Durable pages carry `last_synced`/`verified_against`; older than 90 days or behind the installed Shopware version means stale. `adr/index.md` keeps a generated table of contents (between `<!-- adr-toc:start -->` / `<!-- adr-toc:end -->`, rewritten by the skill), next to its Liquid loop on wikis using the Jekyll flavor; text outside the markers is hand-maintained.
+- Pages carry no `layout`, `nav_order` or `parent` keys — the Jekyll layout is applied site-wide
+  from `_config.yml` (`defaults:`), so pages stay readable as plain Markdown with or without a build.
+- Durable pages carry `last_synced`/`verified_against`; older than 90 days or behind the installed
+  Shopware version means stale. `adr/index.md` keeps a generated table of contents (between
+  `<!-- adr-toc:start -->` / `<!-- adr-toc:end -->`, rewritten by the skill) next to its Liquid loop;
+  text outside the markers is hand-maintained.
+- Terminology is Shopware's — see the [glossary](baseline/glossary.md), including "terms we do not use".
 
-Terminology is Shopware's — see [baseline/glossary.md](baseline/glossary.md), including the "terms we do not use".
-Pages are written by the `sw-document-feature` skill (`.claude/skills/sw-document-feature/`) — its `reference/page-rules.md` governs how it derives status and fills pages.
+---
+
+*Scope: structure, front matter, status vocabulary and terminology — skill internals live in
+`.claude/skills/sw-document-feature/` (`reference/page-rules.md` governs how it fills pages). · Last
+synced: 2026-09-06 · Verified against Shopware 6.7.13 · Re-sync: update when a page type, front
+matter field or status value changes; record structural changes as an ADR with `area: process`.*

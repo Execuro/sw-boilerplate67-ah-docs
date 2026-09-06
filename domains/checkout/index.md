@@ -9,13 +9,12 @@ resync: sw-document-feature updates the feature table.
 tags: [checkout, domain, index]
 ---
 
+[Wiki home](../../index.md) › [Domains](../index.md) › Checkout
+
 # Checkout
 
-**Purpose:** Cart, shipping and payment selection, order placement. **Scope:** Everything up to and including order placement; post-placement lifecycle is Orders.
-**Last synced:** 2026-09-06 · **Verified against:** Shopware 6.7.13
-**How to re-sync:** Reconcile the table with `domains/checkout/*/`.
-
-Extension: none yet — see [extensions inventory](../platform/extensions-inventory.md).
+Everything from the cart up to and including order placement. What happens to an order after it is
+placed belongs to the Orders domain.
 
 ## Features
 
@@ -25,10 +24,17 @@ Extension: none yet — see [extensions inventory](../platform/extensions-invent
 
 ## Domain notes
 
-- The upsell block's visibility threshold reuses the stock Rule Builder "Goods price" condition — no new admin surface was built for it.
-- The upsell candidates come from stock product Cross-Selling, pooled across cart items and de-duplicated; no new product data.
-- The promo label's target amount is a merchant-set amount (see the feature page); it does not grant any reward by itself.
+- The upsell block's visibility threshold reuses the stock Rule Builder "Goods price" condition —
+  no new Administration surface was built for it.
+- Upsell candidates come from stock product Cross-Selling, pooled across the cart items and
+  de-duplicated; no new product data is introduced.
+- The promo label's target amount is a merchant-set amount and grants no reward by itself; any
+  reward (free shipping, discount) would be a separate stock Promotion.
 
-## Related
+No extension of its own yet — see the [extensions inventory](../platform/extensions-inventory.md).
 
-- [../index.md](../index.md)
+---
+
+*Scope: cart, shipping and payment selection, order placement — the post-placement lifecycle is
+Orders. · Last synced: 2026-09-06 · Verified against Shopware 6.7.13 · Re-sync: reconcile the
+feature table with `domains/checkout/*/`.*

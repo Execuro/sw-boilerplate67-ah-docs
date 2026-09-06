@@ -9,30 +9,33 @@ resync: Review when Shopware deprecates an extension mechanism or an ADR changes
 tags: [platform, guidelines, extensions]
 ---
 
+[Wiki home](../../index.md) › [Domains](../index.md) › [Platform](index.md) › Customization guidelines
+
 # Customization guidelines
 
-**Purpose:** Consistent extension mechanisms across domains. **Scope:** Rules and rationale only. **Last synced:** 2026-09-06 · **Verified against:** Shopware 6.7.13
-**How to re-sync:** Cross-check with [../../adr/index.md](../../adr/index.md).
+This is the standard Shopware guidance the project follows by default; no project-specific
+exceptions are recorded yet (see [Decision records](../../adr/index.md)).
 
-## Plugin vs app vs theme
+## Extension type
 
-<!-- State the project's choice and link the ADR that made it (e.g. plugins for owned code, apps for third-party integrations, one theme for look and feel). -->
-
-_TBD_ — record the decision as an ADR with `area: platform` and link it here.
+- Prefer an app where it suffices (no server-side code, distributable via the Store).
+- Otherwise a plugin (owned, deployed code).
+- Reach for a theme only for pure look-and-feel — never for business logic.
 
 ## Preferred mechanisms, in order
 
-<!-- Keep this an ordered list of "reach for X before Y" with one line of rationale each. Typical order: configuration (system config, Rule Builder, Flow Builder) → events/subscribers → service decoration (abstract class, thin decorator) → entity extensions / custom entities → cart processors/collectors → template inheritance in the domain extension (never in the theme) → Administration component override/extend. -->
-
-1. _TBD_
-
-## Never
-
-<!-- Hard prohibitions, e.g. modifying vendor code, copying full core templates, adding columns to core tables by migration, reading $_ENV in services. -->
-
-- _TBD_
+1. Events and subscribers, over overriding core.
+2. Service decoration (abstract class, thin decorator), over overriding core.
+3. Entity extensions, over core schema changes.
+4. Twig block overrides in the extension, over copying core templates.
 
 ## Related
 
-- [extensions-inventory.md](extensions-inventory.md), [debugging.md](debugging.md)
+- [Extensions inventory](extensions-inventory.md), [Debugging](debugging.md)
 - Shopware docs: plugin fundamentals, decorating services, entity extensions (via ShopwareDevKnowledgeBase MCP).
+
+---
+
+*Scope: choice of extension type and mechanism, not a Shopware tutorial · Last synced: 2026-09-06 ·
+Verified against Shopware 6.7.13 · Re-sync: review when Shopware deprecates a mechanism or an ADR
+changes a rule here.*

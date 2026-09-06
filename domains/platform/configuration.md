@@ -9,10 +9,11 @@ resync: sw-document-feature adds rows for new config keys found in a spec; check
 tags: [platform, configuration, feature-flags]
 ---
 
+[Wiki home](../../index.md) › [Domains](../index.md) › [Platform](index.md) › Configuration
+
 # Configuration
 
-**Purpose:** One lookup for "where is that setting". **Scope:** Project-level config only. **Last synced:** 2026-09-06 · **Verified against:** Shopware 6.7.13
-**How to re-sync:** Diff with `.env.dist`, `config/packages/*.yaml`, and each `custom/plugins/*/src/Resources/config/config.xml`.
+One lookup for where a given setting lives, so nobody has to grep the codebase for it.
 
 ## Layers
 
@@ -20,9 +21,9 @@ tags: [platform, configuration, feature-flags]
 
 | Layer | Used for | Where |
 |---|---|---|
-| Environment variables | Infrastructure (DB, mailer, search, URLs) | `.env.local`, container env |
+| Environment variables | Infrastructure (DB, mailer, search, URLs) | `.env`, `.env.local`, `env.example` |
 | System config (`bin/console system:config:*`) | Merchant-editable settings, per Sales Channel | Administration → Settings → Extensions |
-| Feature flags | Toggling unfinished features per environment | _TBD_ (e.g. `config/packages/<prefix>.yaml`) |
+| Feature flags | Toggling unfinished features per environment | `config/packages/` |
 
 ## System config keys
 
@@ -30,7 +31,8 @@ tags: [platform, configuration, feature-flags]
 
 | Key | Domain | Default | Notes |
 |---|---|---|---|
-| _TBD_ | | | |
+
+*No project-specific config keys recorded yet — `config/packages/` only holds `http_discovery.yaml` and `lock.yaml`.*
 
 ## Feature flags
 
@@ -38,8 +40,15 @@ tags: [platform, configuration, feature-flags]
 
 | Flag | Default | Owner |
 |---|---|---|
-| _TBD_ | | |
+
+*No feature flags recorded yet.*
 
 ## Related
 
-- [environments-and-deployment.md](environments-and-deployment.md), [debugging.md](debugging.md)
+- [Environments and deployment](environments-and-deployment.md), [Debugging](debugging.md)
+
+---
+
+*Scope: project-level config only, values are examples, never real secrets · Last synced: 2026-09-06 ·
+Verified against Shopware 6.7.13 · Re-sync: diff with `.env`/`.env.local`/`env.example`,
+`config/packages/*.yaml`, and each extension's `config.xml` once extensions exist.*

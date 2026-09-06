@@ -9,32 +9,46 @@ resync: Update when the CI pipeline or environment list changes.
 tags: [platform, deployment, environments]
 ---
 
+[Wiki home](../../index.md) › [Domains](../index.md) › [Platform](index.md) › Environments and deployment
+
 # Environments and deployment
 
-**Purpose:** Know the path from commit to production. **Scope:** Process only. **Last synced:** 2026-09-06 · **Verified against:** Shopware 6.7.13
-**How to re-sync:** Compare with the CI configuration (e.g. `.github/workflows/`, `.gitlab-ci.yml`) and `.shopware-project.yml`.
+Only one environment is recorded for this project so far: `local`, defined in
+`.shopware-project.yml` (type docker, PHP 8.5). No staging or production environment is recorded
+in the repo yet.
 
-## Environments
+## Local stack
 
-<!-- One row per environment. Data = demo / anonymised copy / real. Feature flags = which are on. No URLs. -->
+The local stack is Docker Compose, generated and managed by shopware-cli — `compose.yaml` carries
+the header *"This file is managed by shopware-cli. Do not edit manually."*, so local changes belong
+in a `compose.override.yaml` instead.
 
-| Environment | Purpose | Data | Feature flags |
-|---|---|---|---|
-| local | Development | _TBD_ | all on |
-| _TBD_ | | | |
-| production | Live Sales Channels | Real | released only |
+| Service | Address | Purpose |
+|---|---|---|
+| Storefront / Administration | <http://127.0.0.1:8000> | The shop itself |
+| Adminer | <http://127.0.0.1:9080> | Database browsing |
+| Mailpit | <http://127.0.0.1:8025> | Catches all outgoing mail (SMTP on 1025) |
+| LavinMQ | <http://127.0.0.1:15672> | Message queue behind Symfony Messenger (AMQP on 5672) |
+| Vite | ports 5173 / 5773 | Administration and Storefront watchers |
+
+Component versions (PHP, Node, Database, Shopware) live on
+[Tech stack](../../baseline/tech-stack.md) — not repeated here.
 
 ## Deployment flow
 
-<!-- Numbered steps from CI to running: build (shopware-cli project ci / build), artifact, target routine (migrations, plugin:refresh/update, theme:compile, cache warmup), rollback strategy. -->
-
-1. _TBD_
+No deployment pipeline is recorded in this repo yet.
 
 ## Rules
 
 - No manual changes on non-local containers.
-- Feature flags (see [configuration.md](configuration.md)) gate anything with `status: partially-built`.
+- Feature flags (see [Configuration](configuration.md)) gate anything with `status: partially-built`.
 
 ## Related
 
-- [../../baseline/tech-stack.md](../../baseline/tech-stack.md), [logging.md](logging.md)
+- [Tech stack](../../baseline/tech-stack.md), [Logging](logging.md)
+
+---
+
+*Scope: process and topology, no hostnames or credentials · Last synced: 2026-09-06 · Verified
+against Shopware 6.7.13 · Re-sync: update when a CI pipeline or a new environment is added to
+`.shopware-project.yml`.*

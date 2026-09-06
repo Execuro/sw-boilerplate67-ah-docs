@@ -1,5 +1,25 @@
-# Jekyll site configuration for docs/project-wiki/ — the site root (GitHub Pages compatible).
-# No theme is chosen yet — pages render with Jekyll's default (unstyled) output until `theme:` is set.
-title: sw-boilerplate67-ah documentation
-description: Durable, atomic documentation for the sw-boilerplate67-ah Shopware project — features per domain and surface, ADRs, platform infrastructure.
+# Jekyll site configuration for the project wiki (GitHub Pages compatible).
+# This folder is the site root: when it is published as its own repository
+# (Settings → Pages → Deploy from a branch → / (root)), this file is the site config.
+
+title: sw-boilerplate67-ah — Project Wiki
+description: What we built in this Shopware project, why, where it lives in the code, and how to run it.
+
+theme: jekyll-theme-primer
 markdown: kramdown
+
+plugins:
+  - jekyll-seo-tag
+
+# Pages carry no theme-specific front matter of their own (they stay readable as plain
+# Markdown), so the layout is applied site-wide from here instead of per page.
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor

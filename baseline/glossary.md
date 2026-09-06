@@ -9,11 +9,13 @@ resync: Add a row whenever a PRD introduces a new project term.
 tags: [glossary, terminology]
 ---
 
+[Wiki home](../index.md) › Glossary
+
 # Glossary
 
-**Purpose:** One vocabulary across PRDs, specs, code, and docs.
-**Scope:** Project terms and the Shopware terms they map to. **Last synced:** 2026-09-06 · **Verified against:** Shopware 6.7.13
-**How to re-sync:** Grep `specs/` for new capitalised nouns after each PRD.
+One vocabulary across PRDs, specs, code and these pages. When the business has its own word for
+something Shopware already names, the Shopware name wins in docs and code — this page records the
+mapping so nobody has to guess.
 
 ## Shopware terms we use
 
@@ -31,15 +33,24 @@ tags: [glossary, terminology]
 | Customer group | Customer segmentation used by prices and rules |
 | Dynamic product group | Rule-based product set (product streams) |
 
-## Project terms → Shopware terms
+## Project terms
 
-<!-- One row per project word that differs from Shopware's. Note which domain owns a custom entity. Delete this comment when the first row exists. -->
+<!-- One row per project word that differs from Shopware's. Note which domain owns a custom entity. -->
 
-| Project term (from PRDs) | Shopware term to use in docs and code | Notes |
+| Project term (from PRDs) | What it maps to | Notes |
 |---|---|---|
-| Upsell block | Cart-level cross-sell surface built on stock product Cross-Selling | Checkout domain; pools Cross-Selling across cart items, not a new product concept |
+| Upsell block | Cart-level cross-sell surface built on stock product Cross-Selling | Checkout domain; pools Cross-Selling across cart items — not a new product concept |
 | Promo label | Cart text stating the amount missing to a merchant-set target amount | Checkout domain; carries no reward by itself |
 
 ## Terms we do not use
 
-Don't say **admin panel** or **backend** — say *Administration*. Don't say **frontend** or **shop front** — say *Storefront*. Don't say **shop** for a channel — say *Sales Channel*. Don't say **plugin** when the thing may be an app or theme — say *Extension*. Don't say **module** or **addon** — say *Extension*. Don't say **CMS page** — say *Shopping Experiences layout*.
+Don't say **admin panel** or **backend** — say *Administration*. Don't say **frontend** or **shop
+front** — say *Storefront*. Don't say **shop** for a channel — say *Sales Channel*. Don't say
+**plugin** when the thing may be an app or theme — say *Extension*. Don't say **module** or
+**addon** — say *Extension*. Don't say **CMS page** — say *Shopping Experiences layout*.
+
+---
+
+*Scope: project terms and the Shopware terms they map to — not a Shopware glossary. · Last synced:
+2026-09-06 · Verified against Shopware 6.7.13 · Re-sync: add a row whenever a PRD introduces a new
+project term.*

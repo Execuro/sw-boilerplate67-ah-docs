@@ -9,23 +9,28 @@ resync: sw-document-feature updates the feature count/status columns; check rows
 tags: [index, domains]
 ---
 
-# Domain index
+[Wiki home](../index.md) › Domains
 
-**Purpose:** Find the right domain and surface quickly. **Scope:** Domain-level only. **Last synced:** 2026-09-06 · **Verified against:** Shopware 6.7.13
-**How to re-sync:** Reconcile with each `domains/<domain>/index.md` feature table.
+# Domains
+
+Feature documentation is grouped by business domain. Pick a domain, then the surface the user acts
+on — Administration for the merchant, Storefront for the shopper.
 
 <!-- sw-document-feature adds a row when it creates a domain. Only domains that have a directory appear here. -->
 
-| Domain | Purpose | Administration features | Storefront features | Status |
+| Domain | Purpose | Administration | Storefront | Status |
 |---|---|---|---|---|
 | [Checkout](checkout/index.md) | Cart, shipping and payment selection, order placement | — | Cart upsell widget | active |
 | [Platform](platform/index.md) | Cross-cutting infrastructure, extensions, configuration, observability | — | — | active |
 
-Domain status values (distinct from feature status, see [CONVENTIONS.md](../CONVENTIONS.md)): `active` (at least one built feature), `planned` (only planned features), `empty` (no features yet).
+Domain status is not the same as feature status (see [Conventions](../CONVENTIONS.md)): `active`
+means at least one built feature, `planned` only planned features, `empty` none yet.
 
-## Canonical domains
+<details>
+<summary>The canonical domain list a new domain must come from</summary>
 
-Domains are created on demand from this list — never invent a slug outside it without an ADR (`area: process`). Guidance: `.claude/skills/sw-document-feature/reference/domain-guidelines.md`.
+Domains are created on demand from this list — never invent a slug outside it without an ADR
+(`area: process`). A domain only appears in the table above once it has a directory here.
 
 | Slug | Domain | Covers |
 |---|---|---|
@@ -41,6 +46,13 @@ Domains are created on demand from this list — never invent a slug outside it 
 | `integrations` | Integrations | ERP/PIM/payment/shipping connectors, imports/exports, webhooks |
 | `platform` | Platform | Cross-cutting infrastructure (no features, no surfaces) |
 
-## Adding a domain
+To add one: create `domains/<slug>/index.md` from the skill's domain-index template, then add a row
+above and in the [wiki home](../index.md) domain table.
 
-Create `domains/<slug>/index.md` from `.claude/skills/sw-document-feature/reference/templates/domain-index.md`, add a row here and in [../index.md](../index.md).
+</details>
+
+---
+
+*Scope: domain level only — feature detail lives on the feature pages. · Last synced: 2026-09-06 ·
+Verified against Shopware 6.7.13 · Re-sync: reconcile with each `domains/<domain>/index.md` feature
+table.*

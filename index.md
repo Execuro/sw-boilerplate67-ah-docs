@@ -11,38 +11,53 @@ tags: [index, wiki]
 
 # Project documentation
 
-**Purpose:** Durable, atomic knowledge about *this* Shopware project — what we built, why, where it lives, and how to operate it.
-**Scope:** Project-specific features, decision records (ADRs), and platform infrastructure. Shopware core behaviour is *not* documented here; link to Shopware docs instead.
-**Last synced:** 2026-09-06 · **Verified against:** Shopware 6.7.13
-**How to re-sync:** Run `sw-document-feature` after each `sw-verify-feature` report; update `last_synced` on touched pages only.
+Everything this team knows about **this** Shopware project: what we built, why we built it that
+way, where it lives in the code, and how to run and debug it. Shopware's own behaviour is not
+repeated here — where stock Shopware already answers a question, we link to Shopware's docs
+instead.
 
-## How to navigate
+## Start here
 
-- New to the project? Start with [baseline/tech-stack.md](baseline/tech-stack.md) and [baseline/glossary.md](baseline/glossary.md).
-- Looking for a feature? Go to the [domain index](domains/index.md), pick the domain, then the surface (Administration or Storefront).
-- Looking for "why did we do it this way"? See [ADRs](adr/index.md) — technical, process, and significant business decisions in one place.
-- Writing or generating a page? Read [CONVENTIONS.md](CONVENTIONS.md) first; page templates live in `.claude/skills/sw-document-feature/reference/templates/`.
+| If you are… | Go to |
+|---|---|
+| New to the project | [Tech stack](baseline/tech-stack.md) — versions, services, how to run it locally |
+| Looking for a feature | [Domains](domains/index.md) — pick a domain, then Administration or Storefront |
+| Asking "why is it built this way?" | [Decision records](adr/index.md) |
+| Debugging something | [Debugging](domains/platform/debugging.md) · [Logging](domains/platform/logging.md) |
+| Unsure what a word means | [Glossary](baseline/glossary.md) |
+| Writing or generating a page | [Conventions](CONVENTIONS.md) |
 
-## Domain map
+## Domains
 
-<!-- sw-document-feature adds one row per domain when the domain is created. Keep in sync with domains/index.md. -->
+Feature documentation is organised by business domain, then by the surface the user acts on —
+Administration (merchant) or Storefront (shopper).
 
-| Domain | Purpose |
+| Domain | What it covers |
 |---|---|
 | [Checkout](domains/checkout/index.md) | Cart, shipping and payment selection, order placement |
-| [Platform](domains/platform/index.md) | Cross-cutting infrastructure: extensions inventory, configuration, logging, debugging, environments |
+| [Platform](domains/platform/index.md) | Cross-cutting infrastructure: extensions, configuration, logging, debugging, environments |
 
-## Sections
+## All sections
 
-- [Overview](README.md) — what this wiki is and how to publish it (GitHub Pages / Jekyll)
-- [Conventions](CONVENTIONS.md) — page types, frontmatter schema, surface-isolation rule, status vocabulary
-- [Tech stack](baseline/tech-stack.md) — the fixed technical baseline (versions, runtime, tooling)
-- [Glossary](baseline/glossary.md) — project terms mapped to Shopware terminology
-- [Decision records (ADRs)](adr/index.md) — technical, process, and significant business decisions
+- [Tech stack](baseline/tech-stack.md) — the versions and services every feature is built and verified against
+- [Glossary](baseline/glossary.md) — project terms mapped to Shopware's own terminology
 - [Domains](domains/index.md) — feature documentation per domain and surface
+- [Decision records](adr/index.md) — the technical and process decisions behind the project
+- [Conventions](CONVENTIONS.md) — page types, front matter, status vocabulary, what not to document
+- [Overview](README.md) — what this wiki is and how it is published
 
-Templates used by `sw-document-feature` live outside the site in `.claude/skills/sw-document-feature/reference/templates/` (see [Conventions](CONVENTIONS.md)).
+## About this wiki
 
-## Pipeline context
+Pages are written and kept in sync by the `sw-document-feature` skill, which documents a feature
+only after it has been verified in the code. Each page states when it was last synced and which
+Shopware version it was verified against, so a stale page is visible as stale rather than wrong.
 
-PRD `specs/NNNN-slug.md` → spec `specs/NNNN-slug-spec.md` → implementation in `custom/plugins/<PluginName>` → `sw-verify-feature` → `sw-document-feature` → pages here.
+The path a feature takes: PRD `specs/NNNN-slug.md` → tech spec `specs/NNNN-slug-spec.md` →
+implementation in `custom/plugins/<PluginName>` → `sw-verify-feature` → `sw-document-feature` →
+the pages here.
+
+---
+
+*Scope: everything under `docs/project-wiki/`. · Last synced: 2026-09-06 · Verified against
+Shopware 6.7.13 · Re-sync: run `sw-document-feature` after each `sw-verify-feature` report;
+`last_synced` is bumped only on the pages that run touches.*

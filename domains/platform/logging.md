@@ -9,10 +9,11 @@ resync: Update when an extension registers a new Monolog channel (config/package
 tags: [platform, logging, observability]
 ---
 
+[Wiki home](../../index.md) › [Domains](../index.md) › [Platform](index.md) › Logging
+
 # Logging
 
-**Purpose:** Find the right log fast. **Scope:** Application-level. **Last synced:** 2026-09-06 · **Verified against:** Shopware 6.7.13
-**How to re-sync:** Compare with `config/packages/monolog.yaml`.
+Which log channel carries what, and where it ends up — so you look in the right file first.
 
 ## Channels
 
@@ -22,16 +23,24 @@ tags: [platform, logging, observability]
 |---|---|---|---|
 | `app` | Shopware core | `error` | `var/log/prod.log`, stderr in containers |
 | `business_events` | Flow Builder, mail | `info` | `var/log/business_events.log` |
-| _TBD_ | | | |
 
-Local (`APP_ENV=dev`): everything at `debug`, also in the Symfony profiler.
+*No project-specific log channel is recorded yet.*
+
+Local (`APP_ENV=dev`): everything at `debug`, also in the Symfony profiler. Log files live under
+`var/log/` (currently empty on a fresh checkout).
 
 ## Conventions
 
 <!-- Context fields every entry carries (sales_channel_id, order_number…), what must never be logged (customer PII), correlation id handling, which channel a feature must use. -->
 
-- _TBD_
+*No project-specific logging conventions recorded yet.*
 
 ## Related
 
-- [debugging.md](debugging.md), [environments-and-deployment.md](environments-and-deployment.md)
+- [Debugging](debugging.md), [Environments and deployment](environments-and-deployment.md)
+
+---
+
+*Scope: application logs from custom extensions and Shopware, not infrastructure/container logs ·
+Last synced: 2026-09-06 · Verified against Shopware 6.7.13 · Re-sync: compare with
+`config/packages/monolog.yaml` when an extension registers a new channel.*

@@ -9,16 +9,19 @@ resync: sw-document-feature adds a row when a spec introduces a new extension; v
 tags: [platform, extensions, inventory]
 ---
 
+[Wiki home](../../index.md) › [Domains](../index.md) › [Platform](index.md) › Extensions inventory
+
 # Extensions inventory
 
-**Purpose:** Know what is installed and who owns it. **Scope:** Project extensions only. **Last synced:** 2026-09-06 · **Verified against:** Shopware 6.7.13
-**How to re-sync:** `bin/console plugin:list`, `bin/console app:list`, `ls custom/plugins custom/apps custom/static-plugins` vs this table.
+Every Extension this project ships, and which domain owns it. If an extension is not listed here, it is not ours.
 
-<!-- One row per extension. Type = plugin | app | theme | package (vendor-installed). Path = custom/... or vendor/... Owning domain links the domain index. Delete the _TBD_ row when the first real row exists. -->
+<!-- One row per extension. Type = plugin | app | theme | package (vendor-installed). Path = custom/... or vendor/... Owning domain links the domain index. -->
 
 | Extension | Type | Path | Owning domain | Depends on | Purpose | Notes |
 |---|---|---|---|---|---|---|
-| _TBD_ | | | | | | |
+
+*No extensions installed yet — `custom/plugins/`, `custom/apps/` and `custom/static-plugins/` are
+all empty.*
 
 ## Rules
 
@@ -26,4 +29,11 @@ tags: [platform, extensions, inventory]
 
 - Every extension that ships project functionality requires a row here, including vendor-installed ones.
 - An extension serving more than one domain records the sharing in the Notes column.
-- Cross-cutting code (logging, feature flags, shared traits) goes into the platform-level extension named here, never into a business-domain extension. See [customization-guidelines.md](customization-guidelines.md).
+- Cross-cutting code (logging, feature flags, shared traits) goes into the platform-level extension named here, never into a business-domain extension. See [Customization guidelines](customization-guidelines.md).
+
+---
+
+*Scope: custom/plugins, custom/apps, custom/static-plugins, and vendor-installed store extensions,
+not Shopware core · Last synced: 2026-09-06 · Verified against Shopware 6.7.13 · Re-sync:
+`bin/console plugin:list`, `bin/console app:list`, `ls custom/plugins custom/apps
+custom/static-plugins` vs this table.*
