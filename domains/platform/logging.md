@@ -1,5 +1,8 @@
 ---
 title: Logging
+nav_order: 4
+grand_parent: Domains
+parent: Platform
 type: platform
 purpose: Which log channels exist, where they go, and how to correlate entries.
 scope: Application logs from custom extensions and Shopware. Not infrastructure/container logs.
@@ -8,8 +11,6 @@ verified_against: Shopware 6.7.13
 resync: Update when an extension registers a new Monolog channel (config/packages/monolog.yaml).
 tags: [platform, logging, observability]
 ---
-
-[Wiki home](../../index.md) › [Domains](../index.md) › [Platform](index.md) › Logging
 
 # Logging
 

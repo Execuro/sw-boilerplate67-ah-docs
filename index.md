@@ -1,5 +1,6 @@
 ---
-title: Project documentation
+title: Home
+nav_order: 1
 type: index
 purpose: Entry point and wiki index for the sw-boilerplate67-ah documentation.
 scope: Everything under docs/project-wiki/. Does not cover Shopware core docs (use the ShopwareDevKnowledgeBase MCP for those).

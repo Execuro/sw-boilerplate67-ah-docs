@@ -1,5 +1,8 @@
 ---
 title: Configuration
+nav_order: 3
+grand_parent: Domains
+parent: Platform
 type: platform
 purpose: Where each kind of setting lives and how features expose their configuration.
 scope: Environment variables, system config keys, feature flags. Values are examples, never real secrets.
@@ -8,8 +11,6 @@ verified_against: Shopware 6.7.13
 resync: sw-document-feature adds rows for new config keys found in a spec; check against each extension's config.xml.
 tags: [platform, configuration, feature-flags]
 ---
-
-[Wiki home](../../index.md) › [Domains](../index.md) › [Platform](index.md) › Configuration
 
 # Configuration
 

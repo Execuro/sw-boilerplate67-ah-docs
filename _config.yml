@@ -5,19 +5,43 @@
 title: sw-boilerplate67-ah — Project Wiki
 description: What we built in this Shopware project, why, where it lives in the code, and how to run it.
 
-theme: jekyll-theme-primer
+# Just the Docs gives the left sidebar navigation and search. It is not one of the themes selectable
+# via `theme:`, but GitHub Pages supports `remote_theme:` on a plain branch deploy — no Actions
+# workflow needed. Pinned to a tag so a theme release cannot change the site unannounced.
+remote_theme: just-the-docs/just-the-docs@v0.10.1
+
 markdown: kramdown
 
 plugins:
+  - jekyll-remote-theme
   - jekyll-seo-tag
 
-# Pages carry no theme-specific front matter of their own (they stay readable as plain
-# Markdown), so the layout is applied site-wide from here instead of per page.
+# Project site served from https://<org>.github.io/<repo>/ — baseurl must match the repository name,
+# otherwise the theme's CSS and JS 404. Change it if the repository is renamed or a custom domain is used.
+baseurl: "/sw-boilerplate67-ah-docs"
+
+# The sidebar hierarchy comes from each page's nav_order / parent / grand_parent front matter;
+# the layout is applied here so pages stay free of theme-specific keys.
 defaults:
   - scope:
       path: ""
     values:
       layout: default
+
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 2
+
+heading_anchors: true
+back_to_top: true
+back_to_top_text: "Back to top"
+
+aux_links:
+  "Project repository": https://github.com/Execuro/sw-boilerplate67-ah
+aux_links_new_tab: true
+
+color_scheme: light
 
 exclude:
   - Gemfile

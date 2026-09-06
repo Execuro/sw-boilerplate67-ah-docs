@@ -1,5 +1,6 @@
 ---
 title: Glossary
+nav_order: 3
 type: project
 purpose: Map project-specific words to Shopware's official terminology.
 scope: Terms used in PRDs, specs, and docs. Not a Shopware glossary.
@@ -8,8 +9,6 @@ verified_against: Shopware 6.7.13
 resync: Add a row whenever a PRD introduces a new project term.
 tags: [glossary, terminology]
 ---
-
-[Wiki home](../index.md) › Glossary
 
 # Glossary
 

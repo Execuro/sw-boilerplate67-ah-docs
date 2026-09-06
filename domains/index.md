@@ -1,5 +1,7 @@
 ---
-title: Domain index
+title: Domains
+has_children: true
+nav_order: 4
 type: index
 purpose: Map of business domains and their features on each surface.
 scope: All domains under docs/project-wiki/domains/. Feature rows are summaries; detail lives on the feature pages.
@@ -8,8 +10,6 @@ verified_against: Shopware 6.7.13
 resync: sw-document-feature updates the feature columns; check rows against each domain index.
 tags: [index, domains]
 ---
-
-[Wiki home](../index.md) › Domains
 
 # Domains
 

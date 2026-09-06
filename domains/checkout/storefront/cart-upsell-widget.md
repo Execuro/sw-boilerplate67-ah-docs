@@ -1,5 +1,8 @@
 ---
-title: "Cart upsell widget (Storefront)"
+title: Cart upsell widget (Storefront)
+nav_order: 1
+grand_parent: Domains
+parent: Checkout
 domain: checkout
 surface: storefront
 feature: cart-upsell-widget
@@ -12,8 +15,6 @@ last_synced: 2026-09-06
 tags: [checkout, storefront]
 related: [../index.md, ../../platform/configuration.md]
 ---
-
-[Wiki home](../../../index.md) › [Domains](../../index.md) › [Checkout](../index.md) › Cart upsell widget
 
 # Cart upsell widget — Storefront
 

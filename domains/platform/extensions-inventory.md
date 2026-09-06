@@ -1,5 +1,8 @@
 ---
 title: Extensions inventory
+nav_order: 1
+grand_parent: Domains
+parent: Platform
 type: platform
 purpose: The authoritative list of custom Extensions (plugins, apps, themes) in this project and which domain owns each.
 scope: custom/plugins, custom/apps, custom/static-plugins, and vendor-installed store extensions that deliver project features. Not Shopware core.
@@ -8,8 +11,6 @@ verified_against: Shopware 6.7.13
 resync: sw-document-feature adds a row when a spec introduces a new extension; verify with `bin/console plugin:list` and `app:list`.
 tags: [platform, extensions, inventory]
 ---
-
-[Wiki home](../../index.md) › [Domains](../index.md) › [Platform](index.md) › Extensions inventory
 
 # Extensions inventory
 

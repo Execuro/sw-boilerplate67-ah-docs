@@ -1,5 +1,8 @@
 ---
 title: Environments and deployment
+nav_order: 6
+grand_parent: Domains
+parent: Platform
 type: platform
 purpose: Which environments exist, how a build reaches them, and how to roll back.
 scope: Process and topology. No hostnames or credentials.
@@ -8,8 +11,6 @@ verified_against: Shopware 6.7.13
 resync: Update when the CI pipeline or environment list changes.
 tags: [platform, deployment, environments]
 ---
-
-[Wiki home](../../index.md) › [Domains](../index.md) › [Platform](index.md) › Environments and deployment
 
 # Environments and deployment
 

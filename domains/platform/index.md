@@ -1,5 +1,8 @@
 ---
 title: Platform
+has_children: true
+nav_order: 2
+parent: Domains
 type: domain
 purpose: Cross-cutting application infrastructure shared by every business domain.
 scope: Extensions inventory, customization rules, configuration, logging, debugging, environments. No business features.
@@ -8,8 +11,6 @@ verified_against: Shopware 6.7.13
 resync: Review after each Shopware upgrade or infrastructure change; each sub-page has its own resync rule.
 tags: [platform, infrastructure, index]
 ---
-
-[Wiki home](../../index.md) › [Domains](../index.md) › Platform
 
 # Platform
 

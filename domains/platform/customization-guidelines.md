@@ -1,5 +1,8 @@
 ---
 title: Customization guidelines
+nav_order: 2
+grand_parent: Domains
+parent: Platform
 type: platform
 purpose: How we extend Shopware in this project, so every feature uses the same mechanisms.
 scope: Choice of extension type and extension mechanism. Not a Shopware tutorial — links to Shopware docs for mechanics.
@@ -8,8 +11,6 @@ verified_against: Shopware 6.7.13
 resync: Review when Shopware deprecates an extension mechanism or an ADR changes a rule here.
 tags: [platform, guidelines, extensions]
 ---
-
-[Wiki home](../../index.md) › [Domains](../index.md) › [Platform](index.md) › Customization guidelines
 
 # Customization guidelines
 

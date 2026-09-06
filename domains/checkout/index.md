@@ -1,5 +1,8 @@
 ---
 title: Checkout
+has_children: true
+nav_order: 1
+parent: Domains
 type: domain
 purpose: Cart, shipping and payment selection, order placement.
 scope: Cart contents and pricing, cart-level upsell/promo surfaces, shipping/payment method selection, checkout confirm/finish. Post-placement order lifecycle belongs to Orders.
@@ -8,8 +11,6 @@ verified_against: Shopware 6.7.13
 resync: sw-document-feature updates the feature table.
 tags: [checkout, domain, index]
 ---
-
-[Wiki home](../../index.md) › [Domains](../index.md) › Checkout
 
 # Checkout
 

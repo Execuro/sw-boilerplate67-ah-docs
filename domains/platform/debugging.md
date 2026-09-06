@@ -1,5 +1,8 @@
 ---
 title: Debugging
+nav_order: 5
+grand_parent: Domains
+parent: Platform
 type: platform
 purpose: How to observe and debug this project locally, and where to look first for common failures.
 scope: Local development. Production incident handling lives in environments-and-deployment.md.
@@ -8,8 +11,6 @@ verified_against: Shopware 6.7.13
 resync: Update when the local setup or tooling changes (see baseline/tech-stack.md).
 tags: [platform, debugging, profiler, xdebug]
 ---
-
-[Wiki home](../../index.md) › [Domains](../index.md) › [Platform](index.md) › Debugging
 
 # Debugging
 

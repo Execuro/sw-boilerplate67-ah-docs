@@ -1,5 +1,6 @@
 ---
 title: Tech stack
+nav_order: 2
 type: project
 purpose: The fixed technical baseline every feature is built and verified against.
 scope: Versions, runtime, tooling, environment shape. Not per-feature configuration (see domains/platform/configuration.md).
@@ -8,8 +9,6 @@ verified_against: Shopware 6.7.13
 resync: Update after any Shopware, PHP, or shopware-cli upgrade; bump verified_against on all pages in the same change.
 tags: [baseline, versions]
 ---
-
-[Wiki home](../index.md) › Tech stack
 
 # Tech stack
 

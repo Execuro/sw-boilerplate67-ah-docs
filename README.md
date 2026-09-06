@@ -1,5 +1,6 @@
 ---
 title: "sw-boilerplate67-ah — project wiki"
+nav_exclude: true
 tags: [readme, meta]
 ---
 
@@ -27,22 +28,25 @@ Pages are kept in sync by the `sw-document-feature` skill after each feature ver
 
 ## Publishing with GitHub Pages
 
-The wiki uses the [Primer](https://github.com/pages-themes/primer) theme — one of the themes
-GitHub Pages supports natively, so no build setup or Actions workflow is needed. Which of the two
-setups applies depends on where this folder lives:
+The wiki uses [Just the Docs](https://just-the-docs.com/) for its sidebar navigation and search.
+It is pulled in with `remote_theme:`, which GitHub Pages supports on an ordinary branch deploy — no
+Actions workflow and no local build are needed. Which of the two setups applies depends on where
+this folder lives:
 
 **A. Published as its own repository** (this folder is the repository root — the simplest case):
 
 1. Push the folder to its own GitHub repository.
 2. Settings → Pages → Build and deployment: Source **Deploy from a branch**, branch `master`, folder **/ (root)**.
-3. `_config.yml` here is the site config, so the Primer theme applies automatically.
+3. `_config.yml` here is the site config, so the theme applies automatically. Keep its
+   `baseurl` equal to the repository name (`/<repo>`), or the theme's CSS and JS will 404.
 
 **B. Published from the parent project repository** (`docs/project-wiki/` inside a larger repo):
 
 GitHub Pages only reads `_config.yml` from the Pages source root (`/` or `/docs`), never from a
-nested folder — so a branch deploy from `/docs` renders these pages **unthemed**. To keep the
-theme, either move the wiki to its own repository (setup A), or switch Source to **GitHub Actions**
-and point a Jekyll build at this folder (`actions/jekyll-build-pages` with `source: docs/project-wiki`).
+nested folder — so a branch deploy from `/docs` renders these pages **unthemed**, without the
+sidebar. To keep the theme, either publish the wiki as its own repository (setup A), or switch
+Source to **GitHub Actions** and point a Jekyll build at this folder (`actions/jekyll-build-pages`
+with `source: docs/project-wiki`).
 
 ## Previewing locally
 
