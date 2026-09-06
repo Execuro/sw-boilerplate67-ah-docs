@@ -5,7 +5,7 @@ purpose: How to observe and debug this project locally, and where to look first 
 scope: Local development. Production incident handling lives in environments-and-deployment.md.
 last_synced: 2026-09-06
 verified_against: Shopware 6.7.13
-resync: Update when the local setup or tooling changes (see project/baseline.md).
+resync: Update when the local setup or tooling changes (see baseline/tech-stack.md).
 tags: [platform, debugging, profiler, xdebug]
 ---
 

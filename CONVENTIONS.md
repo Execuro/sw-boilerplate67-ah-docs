@@ -52,5 +52,5 @@ Feature-level technical decisions → the *Developer › Decisions* bullets of t
 - Every page starts with YAML front matter containing at least `title`; no `layout`/`nav` keys (theme-agnostic — renders as plain Markdown even without Jekyll).
 - Durable pages carry `last_synced`/`verified_against`; older than 90 days or behind the installed Shopware version means stale. `adr/index.md` keeps a generated table of contents (between `<!-- adr-toc:start -->` / `<!-- adr-toc:end -->`, rewritten by the skill), next to its Liquid loop on wikis using the Jekyll flavor; text outside the markers is hand-maintained.
 
-Terminology is Shopware's — see [project/glossary.md](project/glossary.md), including the "terms we do not use".
+Terminology is Shopware's — see [baseline/glossary.md](baseline/glossary.md), including the "terms we do not use".
 Pages are written by the `sw-document-feature` skill (`.claude/skills/sw-document-feature/`) — its `reference/page-rules.md` governs how it derives status and fills pages.

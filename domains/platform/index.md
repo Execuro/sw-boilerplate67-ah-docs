@@ -28,5 +28,5 @@ Unlike business domains, Platform has no Administration/Storefront split and no 
 
 ## Related
 
-- [../../project/baseline.md](../../project/baseline.md)
+- [../../baseline/tech-stack.md](../../baseline/tech-stack.md)
 - [../../adr/index.md](../../adr/index.md)

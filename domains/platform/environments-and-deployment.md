@@ -37,4 +37,4 @@ tags: [platform, deployment, environments]
 
 ## Related
 
-- [../../project/baseline.md](../../project/baseline.md), [logging.md](logging.md)
+- [../../baseline/tech-stack.md](../../baseline/tech-stack.md), [logging.md](logging.md)
