@@ -1,0 +1,5 @@
+# Jekyll site configuration for docs/project-wiki/ — the site root (GitHub Pages compatible).
+# No theme is chosen yet — pages render with Jekyll's default (unstyled) output until `theme:` is set.
+title: sw-boilerplate67-ah documentation
+description: Durable, atomic documentation for the sw-boilerplate67-ah Shopware project — features per domain and surface, ADRs, platform infrastructure.
+markdown: kramdown
