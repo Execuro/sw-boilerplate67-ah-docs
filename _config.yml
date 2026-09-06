@@ -2,7 +2,7 @@
 # This folder is the site root: when it is published as its own repository
 # (Settings → Pages → Deploy from a branch → / (root)), this file is the site config.
 
-title: sw-boilerplate67-ah — Project Wiki
+title: Shopware Project Wiki
 description: What we built in this Shopware project, why, where it lives in the code, and how to run it.
 
 # Just the Docs gives the left sidebar navigation and search. It is not one of the themes selectable

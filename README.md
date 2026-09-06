@@ -1,10 +1,10 @@
 ---
-title: "sw-boilerplate67-ah — project wiki"
+title: "Shopware Project Wiki"
 nav_exclude: true
 tags: [readme, meta]
 ---
 
-# sw-boilerplate67-ah — project wiki
+# Shopware Project Wiki
 
 **→ Start reading at [index.md](index.md).** This page explains what the wiki is and how it is
 published; the documentation itself starts at the index.
