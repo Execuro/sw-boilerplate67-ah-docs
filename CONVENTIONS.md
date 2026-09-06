@@ -50,7 +50,6 @@ cross-cutting domain, and has no surfaces.
 ## Status
 
 - Feature: `built` (code present, all ACs verified pass) · `partially-built` (code present, verification missing or failing) · `planned` (PRD/spec only) · `not-built` (nothing in the repo) · `deprecated` (removed or replaced).
-- Domain: `active` (≥1 built feature) · `planned` (only planned features) · `empty` (no features).
 - Pages not `built` carry a ⚠️ status block after *Summary*.
 
 ## Reference code, don't restate it

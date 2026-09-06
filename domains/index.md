@@ -1,11 +1,11 @@
 ---
 title: Domain index
 type: index
-purpose: Map of business domains, their features on each surface, and their status.
+purpose: Map of business domains and their features on each surface.
 scope: All domains under docs/project-wiki/domains/. Feature rows are summaries; detail lives on the feature pages.
 last_synced: 2026-09-06
 verified_against: Shopware 6.7.13
-resync: sw-document-feature updates the feature count/status columns; check rows against each domain index.
+resync: sw-document-feature updates the feature columns; check rows against each domain index.
 tags: [index, domains]
 ---
 
@@ -18,13 +18,12 @@ on — Administration for the merchant, Storefront for the shopper.
 
 <!-- sw-document-feature adds a row when it creates a domain. Only domains that have a directory appear here. -->
 
-| Domain | Purpose | Administration | Storefront | Status |
-|---|---|---|---|---|
-| [Checkout](checkout/index.md) | Cart, shipping and payment selection, order placement | — | Cart upsell widget | active |
-| [Platform](platform/index.md) | Cross-cutting infrastructure, extensions, configuration, observability | — | — | active |
+| Domain | Purpose | Administration | Storefront |
+|---|---|---|---|
+| [Checkout](checkout/index.md) | Cart, shipping and payment selection, order placement | — | Cart upsell widget |
+| [Platform](platform/index.md) | Cross-cutting infrastructure, extensions, configuration, observability | — | — |
 
-Domain status is not the same as feature status (see [Conventions](../CONVENTIONS.md)): `active`
-means at least one built feature, `planned` only planned features, `empty` none yet.
+Each feature carries its own status on the domain page it belongs to.
 
 <details>
 <summary>The canonical domain list a new domain must come from</summary>
