@@ -6,13 +6,13 @@ grand_parent: Domains
 domain: checkout
 surface: storefront
 feature: cart-upsell-widget
-status: built
+status: planned
 extension: null
 spec: null
 prd: specs/0001-cart-upsell-widget.md
 verified_against: Shopware 6.7.13
 last_synced: 2026-09-07
-tags: [checkout, storefront]
+tags: [checkout, storefront, planned]
 related: [../administration/cart-upsell-widget.md, ../index.md, ../../platform/configuration.md]
 ---
 
@@ -24,9 +24,17 @@ stating how much is still missing to reach a target amount. Why this exists:
 
 ## Status
 
-`built` — no `sw-verify-feature` report exists; documented on the user's instruction for a demo run
-(see Decision Log). AC-1..AC-11 of `specs/0001-cart-upsell-widget.md` are the reference.
-
+> ⚠️ NOT BUILT
+>
+> **What exists in the repo:** the PRD `specs/0001-cart-upsell-widget.md` (In progress, 70%, nine open questions) and the WIP ADR
+> `specs/0001-cart-upsell-widget-adr-extension-topology.md` (proposed). No tech spec.
+> **What is missing:** everything — `custom/plugins/`, `custom/apps/` and `custom/static-plugins/` are
+> empty, `src/` holds only an empty `src/Controller`, `composer.json` requires nothing beyond
+> `shopware/*` plus `symfony/flex` and `symfony/amqp-messenger`, and `bin/console plugin:list` was not
+> reachable (docker service `web` not running).
+> **Reference:** PRD AC-1..AC-11; verification not run. Checked against the repo on 2026-09-07.
+>
+> Do not describe this feature as available. Everything below is the *intended* design from the PRD.
 ## Business user
 
 **The upsell block**
@@ -53,7 +61,7 @@ stating how much is still missing to reach a target amount. Why this exists:
 **When something goes wrong:** if an upsell product cannot be added (sold out in the meantime), the
 shopper sees the standard cart error message and the cart is left unchanged.
 
-## Developer
+## Developer (planned)
 
 - **Where:** no dedicated extension is recorded for this project yet (`extension: null`); the surface
   is the storefront cart and offcanvas cart. See [../administration/cart-upsell-widget.md](../administration/cart-upsell-widget.md)
@@ -66,7 +74,10 @@ shopper sees the standard cart error message and the cart is left unchanged.
   set, so no new product data is introduced (PRD C-2). The threshold is merchant-maintained from the
   first release rather than fixed in code, initial value 20 (PRD C-1). The block deliberately stays
   hidden instead of falling back to a curated product set. Discounts and free gifts are out of scope
-  — stock Promotions cover pricing if that is wanted later.
+  — stock Promotions cover pricing if that is wanted later. Where this code will live is not a
+  feature decision: [ADR-0001-extension-topology](../../../../../specs/0001-cart-upsell-widget-adr-extension-topology.md) (WIP, proposed) sets the
+  project-wide rule that features ship inside a domain plugin (`AhCheckout` for this domain), never a
+  plugin of their own; that ADR is still proposed, so the packaging is not settled.
 - **Config:** the threshold and the label's target amount are merchant settings, described on the
   [Administration page](../administration/cart-upsell-widget.md); see also
   [../../platform/configuration.md](../../platform/configuration.md).
@@ -78,22 +89,30 @@ shopper sees the standard cart error message and the cart is left unchanged.
   - Thresholds are not currency-converted: the same number applies in every currency.
   - The same product being Cross-Selling of several cart items must still be offered once.
   - Which four of more than four candidates are shown is not a business concern and is not specified.
-  - Open in the PRD (`_TBD_`, PRD §11 Q-1..Q-6): whether the label's target is the same value as the
+  - A Cross-Selling product with variants cannot be added in one step, so whether it may be offered
+    at all is unresolved (PRD Q-9) — the one-step promise and the merchant's Cross-Selling data
+    conflict here.
+  - Open in the PRD (`_TBD_`, PRD §11 Q-1..Q-9): whether the label's target is the same value as the
     block threshold, what reaching the target promises the shopper, when the label shows, what it
-    shows once the target is reached, which cart figure it counts, and whether its wording is
-    merchant-editable per language.
+    shows once the target is reached, which cart figure it counts, whether its wording is
+    merchant-editable per language, whether threshold and target are shop-wide or per sales channel,
+    and whether the amounts are read net or gross — a customer group on net price display is shown a
+    different goods value for the identical cart (Q-8).
 
 ## Related
 
 - Counterpart surface: [../administration/cart-upsell-widget.md](../administration/cart-upsell-widget.md)
 - Domain: [../index.md](../index.md)
 - PRD: [../../../../../specs/0001-cart-upsell-widget.md](../../../../../specs/0001-cart-upsell-widget.md)
+- ADR: [ADR-0001-extension-topology](../../../../../specs/0001-cart-upsell-widget-adr-extension-topology.md) (WIP, proposed)
 - Platform: [../../platform/configuration.md](../../platform/configuration.md)
 
 ## Decision Log
 
 - 2026-09-07 — Domain set to checkout by user (ambiguous between checkout and marketing)
 - 2026-09-07 — Documented as `built` on the user's instruction for a demo run; the built-check found no code under `custom/` or `vendor/` and no verification report
+- 2026-09-07 — Status changed built→planned by built-check (no artefact under custom/, src/ or vendor/; plugin:list not reachable)
+- 2026-09-07 — User enforced documentation although the built-check found no code
 
 ---
 
