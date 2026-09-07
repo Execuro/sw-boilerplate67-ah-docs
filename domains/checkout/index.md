@@ -20,9 +20,9 @@ order is placed belongs to Orders.
 
 ## Features
 
-| Feature | Why (business goal) | Administration | Storefront | Status | Spec |
-|---|---|---|---|---|---|
-| Cart upsell widget | The cart is the last place to grow the order value: shoppers already above a merchant-set goods value are offered companion products from the cart items' Cross-Selling, and a promo label tells shoppers below a target amount how much is still missing. | [page](administration/cart-upsell-widget.md) | [page](storefront/cart-upsell-widget.md) | built | — (PRD only: `specs/0001-cart-upsell-widget.md`) |
+| Feature | Why (business goal) | Administration | Storefront | Status |
+|---|---|---|---|---|
+| Cart upsell widget | The cart is the last place to grow the order value: shoppers already above a merchant-set goods value are offered companion products from the cart items' Cross-Selling, and a promo label tells shoppers below a target amount how much is still missing. | [page](administration/cart-upsell-widget.md) | [page](storefront/cart-upsell-widget.md) | built |
 
 ## Domain notes
 
