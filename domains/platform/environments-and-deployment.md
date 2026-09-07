@@ -6,7 +6,7 @@ parent: Platform
 type: platform
 purpose: Which environments exist, how a build reaches them, and how to roll back.
 scope: Process and topology. No hostnames or credentials.
-last_synced: 2026-09-06
+last_synced: 2026-09-07
 verified_against: Shopware 6.7.13
 resync: Update when the CI pipeline or environment list changes.
 tags: [platform, deployment, environments]
@@ -14,30 +14,24 @@ tags: [platform, deployment, environments]
 
 # Environments and deployment
 
-Only one environment is recorded for this project so far: `local`, defined in
-`.shopware-project.yml` (type docker, PHP 8.5). No staging or production environment is recorded
-in the repo yet.
+<!-- List every environment defined in .shopware-project.yml or the CI config, local first. Fill from the repo, never invent one. -->
+
+*No environment beyond `local` is recorded for this project yet.*
 
 ## Local stack
 
-The local stack is Docker Compose, generated and managed by shopware-cli — `compose.yaml` carries
-the header *"This file is managed by shopware-cli. Do not edit manually."*, so local changes belong
-in a `compose.override.yaml` instead.
+<!-- One row per service the local stack exposes, read from compose.yaml / docker-dev; ports and addresses are project facts, not examples. -->
 
-| Service | Address | Purpose |
-|---|---|---|
-| Storefront / Administration | <http://127.0.0.1:8000> | The shop itself |
-| Adminer | <http://127.0.0.1:9080> | Database browsing |
-| Mailpit | <http://127.0.0.1:8025> | Catches all outgoing mail (SMTP on 1025) |
-| LavinMQ | <http://127.0.0.1:15672> | Message queue behind Symfony Messenger (AMQP on 5672) |
-| Vite | ports 5173 / 5773 | Administration and Storefront watchers |
+*Local services not recorded yet — see [Tech stack](../../baseline/tech-stack.md) for how to read them from `compose.yaml`.*
 
 Component versions (PHP, Node, Database, Shopware) live on
 [Tech stack](../../baseline/tech-stack.md) — not repeated here.
 
 ## Deployment flow
 
-No deployment pipeline is recorded in this repo yet.
+<!-- Numbered steps from CI to running: build (shopware-cli project ci / build), artifact, target routine (migrations, plugin:refresh/update, theme:compile, cache warmup), rollback strategy. -->
+
+*No deployment pipeline is recorded in this repo yet.*
 
 ## Rules
 
@@ -50,6 +44,6 @@ No deployment pipeline is recorded in this repo yet.
 
 ---
 
-*Scope: process and topology, no hostnames or credentials · Last synced: 2026-09-06 · Verified
+*Scope: process and topology, no hostnames or credentials · Last synced: 2026-09-07 · Verified
 against Shopware 6.7.13 · Re-sync: update when a CI pipeline or a new environment is added to
 `.shopware-project.yml`.*

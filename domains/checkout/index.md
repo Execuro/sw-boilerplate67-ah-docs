@@ -4,9 +4,9 @@ has_children: true
 nav_order: 1
 parent: Domains
 type: domain
-purpose: Cart, shipping and payment selection, order placement.
-scope: Cart contents and pricing, cart-level upsell/promo surfaces, shipping/payment method selection, checkout confirm/finish. Post-placement order lifecycle belongs to Orders.
-last_synced: 2026-09-06
+purpose: The cart and the steps from it to a placed order — cart contents, shipping and payment selection, order placement.
+scope: Everything the shopper does between the cart and the order confirmation, plus the merchant settings that steer it. Product data and cross-selling maintenance belong to Catalogues; the placed order and its lifecycle belong to Orders.
+last_synced: 2026-09-07
 verified_against: Shopware 6.7.13
 resync: sw-document-feature updates the feature table.
 tags: [checkout, domain, index]
@@ -14,28 +14,30 @@ tags: [checkout, domain, index]
 
 # Checkout
 
-Everything from the cart up to and including order placement. What happens to an order after it is
-placed belongs to the Orders domain.
+What the shopper does from the cart to the placed order, and the merchant settings that steer it.
+Maintaining product data and each product's Cross-Selling happens in Catalogues; everything after the
+order is placed belongs to Orders.
 
 ## Features
 
 | Feature | Why (business goal) | Administration | Storefront | Status | Spec |
 |---|---|---|---|---|---|
-| Cart upsell widget | Grows order value at the last point of the funnel: shoppers above a merchant-set cart threshold see cross-sell products they can add in one step, and a promo label nudges shoppers below a target amount toward it. | — | [page](storefront/cart-upsell-widget.md) | built | — |
+| Cart upsell widget | The cart is the last place to grow the order value: shoppers already above a merchant-set goods value are offered companion products from the cart items' Cross-Selling, and a promo label tells shoppers below a target amount how much is still missing. | [page](administration/cart-upsell-widget.md) | [page](storefront/cart-upsell-widget.md) | built | — (PRD only: `specs/0001-cart-upsell-widget.md`) |
 
 ## Domain notes
 
-- The upsell block's visibility threshold reuses the stock Rule Builder "Goods price" condition —
-  no new Administration surface was built for it.
-- Upsell candidates come from stock product Cross-Selling, pooled across the cart items and
-  de-duplicated; no new product data is introduced.
-- The promo label's target amount is a merchant-set amount and grants no reward by itself; any
-  reward (free shipping, discount) would be a separate stock Promotion.
+- The goods value used across this domain is the product sum as displayed to the shopper, before
+  shipping costs and unaffected by promotion discounts.
+- Amounts configured for this domain are plain numbers applied in the shopper's active currency —
+  no conversion happens, so 20 means 20 EUR for a EUR shopper and 20 USD for a USD shopper.
+- This domain deliberately does not own product recommendations outside the cart: the product detail
+  page uses stock Cross-Selling and belongs to Catalogues.
 
-No extension of its own yet — see the [extensions inventory](../platform/extensions-inventory.md).
+## Related
+
+- [../index.md](../index.md)
 
 ---
 
-*Scope: cart, shipping and payment selection, order placement — the post-placement lifecycle is
-Orders. · Last synced: 2026-09-06 · Verified against Shopware 6.7.13 · Re-sync: reconcile the
-feature table with `domains/checkout/*/`.*
+*Scope: cart to order placement. · Last synced: 2026-09-07 · Verified against Shopware 6.7.13 ·
+Re-sync: reconcile the feature table with `domains/checkout/*/`.*

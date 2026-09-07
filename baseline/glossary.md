@@ -4,7 +4,7 @@ nav_order: 3
 type: project
 purpose: Map project-specific words to Shopware's official terminology.
 scope: Terms used in PRDs, specs, and docs. Not a Shopware glossary.
-last_synced: 2026-09-06
+last_synced: 2026-09-07
 verified_against: Shopware 6.7.13
 resync: Add a row whenever a PRD introduces a new project term.
 tags: [glossary, terminology]
@@ -38,8 +38,9 @@ mapping so nobody has to guess.
 
 | Project term (from PRDs) | What it maps to | Notes |
 |---|---|---|
-| Upsell block | Cart-level cross-sell surface built on stock product Cross-Selling | Checkout domain; pools Cross-Selling across cart items — not a new product concept |
-| Promo label | Cart text stating the amount missing to a merchant-set target amount | Checkout domain; carries no reward by itself |
+| Upsell block | A cart area listing the Cross-Selling products of the cart items for one-step adding | Visible only while the goods-value rule matches; owned by Checkout |
+| Promo label | A cart text stating how much is still missing to reach a merchant-set target amount | Owned by Checkout |
+| Goods value | The product sum in the cart as displayed to the shopper, before shipping costs | Unaffected by promotion discounts |
 
 ## Terms we do not use
 
@@ -51,5 +52,5 @@ front** — say *Storefront*. Don't say **shop** for a channel — say *Sales Ch
 ---
 
 *Scope: project terms and the Shopware terms they map to — not a Shopware glossary. · Last synced:
-2026-09-06 · Verified against Shopware 6.7.13 · Re-sync: add a row whenever a PRD introduces a new
+2026-09-07 · Verified against Shopware 6.7.13 · Re-sync: add a row whenever a PRD introduces a new
 project term.*

@@ -4,7 +4,7 @@ nav_order: 1
 type: index
 purpose: Entry point and wiki index for the sw-boilerplate67-ah documentation.
 scope: Everything under docs/project-wiki/. Does not cover Shopware core docs (use the ShopwareDevKnowledgeBase MCP for those).
-last_synced: 2026-09-06
+last_synced: 2026-09-07
 verified_against: Shopware 6.7.13
 resync: Regenerate the domain map from domains/index.md whenever a domain or feature page is added.
 tags: [index, wiki]
@@ -33,9 +33,11 @@ instead.
 Feature documentation is organised by business domain, then by the surface the user acts on —
 Administration (merchant) or Storefront (shopper).
 
+<!-- sw-document-feature adds one row per domain when the domain is created. Keep in sync with domains/index.md. -->
+
 | Domain | What it covers |
 |---|---|
-| [Checkout](domains/checkout/index.md) | Cart, shipping and payment selection, order placement |
+| [Checkout](domains/checkout/index.md) | The cart and the steps from it to a placed order |
 | [Platform](domains/platform/index.md) | Cross-cutting infrastructure: extensions, configuration, logging, debugging, environments |
 
 ## All sections
@@ -59,6 +61,6 @@ the pages here.
 
 ---
 
-*Scope: everything under `docs/project-wiki/`. · Last synced: 2026-09-06 · Verified against
+*Scope: everything under `docs/project-wiki/`. · Last synced: 2026-09-07 · Verified against
 Shopware 6.7.13 · Re-sync: run `sw-document-feature` after each `sw-verify-feature` report;
 `last_synced` is bumped only on the pages that run touches.*

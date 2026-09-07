@@ -6,7 +6,7 @@ parent: Platform
 type: platform
 purpose: How we extend Shopware in this project, so every feature uses the same mechanisms.
 scope: Choice of extension type and extension mechanism. Not a Shopware tutorial — links to Shopware docs for mechanics.
-last_synced: 2026-09-06
+last_synced: 2026-09-07
 verified_against: Shopware 6.7.13
 resync: Review when Shopware deprecates an extension mechanism or an ADR changes a rule here.
 tags: [platform, guidelines, extensions]
@@ -19,11 +19,15 @@ exceptions are recorded yet (see [Decision records](../../adr/index.md)).
 
 ## Extension type
 
+<!-- State the project's choice and link the ADR that made it once one is recorded, e.g. plugins for owned code, apps for third-party integrations, one theme for look and feel. Until then, this is Shopware's own default guidance. -->
+
 - Prefer an app where it suffices (no server-side code, distributable via the Store).
 - Otherwise a plugin (owned, deployed code).
 - Reach for a theme only for pure look-and-feel — never for business logic.
 
 ## Preferred mechanisms, in order
+
+<!-- Keep this an ordered list of "reach for X before Y" with one line of rationale each. Adjust once an ADR overrides a step. -->
 
 1. Events and subscribers, over overriding core.
 2. Service decoration (abstract class, thin decorator), over overriding core.
@@ -37,6 +41,6 @@ exceptions are recorded yet (see [Decision records](../../adr/index.md)).
 
 ---
 
-*Scope: choice of extension type and mechanism, not a Shopware tutorial · Last synced: 2026-09-06 ·
+*Scope: choice of extension type and mechanism, not a Shopware tutorial · Last synced: 2026-09-07 ·
 Verified against Shopware 6.7.13 · Re-sync: review when Shopware deprecates a mechanism or an ADR
 changes a rule here.*

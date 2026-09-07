@@ -36,9 +36,10 @@ this folder lives:
 **A. Published as its own repository** (this folder is the repository root — the simplest case):
 
 1. Push the folder to its own GitHub repository.
-2. Settings → Pages → Build and deployment: Source **Deploy from a branch**, branch `master`, folder **/ (root)**.
-3. `_config.yml` here is the site config, so the theme applies automatically. Keep its
-   `baseurl` equal to the repository name (`/<repo>`), or the theme's CSS and JS will 404.
+2. Settings → Pages → Build and deployment: Source **Deploy from a branch**, branch `main` (or
+   `master`), folder **/ (root)**.
+3. `_config.yml` here is the site config, so the theme applies automatically. Set its
+   `baseurl` to the repository name (`/<repo>`), or the theme's CSS and JS will 404.
 
 **B. Published from the parent project repository** (`docs/project-wiki/` inside a larger repo):
 
@@ -67,5 +68,5 @@ gem "github-pages", group: :jekyll_plugins
 
 ---
 
-*Generated 2026-09-06 · verified against Shopware 6.7.13 · the rules for pages live in
+*Generated 2026-09-07 · verified against Shopware 6.7.13 · the rules for pages live in
 [CONVENTIONS.md](CONVENTIONS.md).*

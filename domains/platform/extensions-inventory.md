@@ -6,7 +6,7 @@ parent: Platform
 type: platform
 purpose: The authoritative list of custom Extensions (plugins, apps, themes) in this project and which domain owns each.
 scope: custom/plugins, custom/apps, custom/static-plugins, and vendor-installed store extensions that deliver project features. Not Shopware core.
-last_synced: 2026-09-06
+last_synced: 2026-09-07
 verified_against: Shopware 6.7.13
 resync: sw-document-feature adds a row when a spec introduces a new extension; verify with `bin/console plugin:list` and `app:list`.
 tags: [platform, extensions, inventory]
@@ -35,6 +35,6 @@ all empty.*
 ---
 
 *Scope: custom/plugins, custom/apps, custom/static-plugins, and vendor-installed store extensions,
-not Shopware core · Last synced: 2026-09-06 · Verified against Shopware 6.7.13 · Re-sync:
+not Shopware core · Last synced: 2026-09-07 · Verified against Shopware 6.7.13 · Re-sync:
 `bin/console plugin:list`, `bin/console app:list`, `ls custom/plugins custom/apps
 custom/static-plugins` vs this table.*

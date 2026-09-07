@@ -6,7 +6,7 @@ parent: Platform
 type: platform
 purpose: Which log channels exist, where they go, and how to correlate entries.
 scope: Application logs from custom extensions and Shopware. Not infrastructure/container logs.
-last_synced: 2026-09-06
+last_synced: 2026-09-07
 verified_against: Shopware 6.7.13
 resync: Update when an extension registers a new Monolog channel (config/packages/monolog.yaml).
 tags: [platform, logging, observability]
@@ -27,8 +27,7 @@ Which log channel carries what, and where it ends up — so you look in the righ
 
 *No project-specific log channel is recorded yet.*
 
-Local (`APP_ENV=dev`): everything at `debug`, also in the Symfony profiler. Log files live under
-`var/log/` (currently empty on a fresh checkout).
+Local (`APP_ENV=dev`): everything at `debug`, also in the Symfony profiler.
 
 ## Conventions
 
@@ -43,5 +42,5 @@ Local (`APP_ENV=dev`): everything at `debug`, also in the Symfony profiler. Log 
 ---
 
 *Scope: application logs from custom extensions and Shopware, not infrastructure/container logs ·
-Last synced: 2026-09-06 · Verified against Shopware 6.7.13 · Re-sync: compare with
+Last synced: 2026-09-07 · Verified against Shopware 6.7.13 · Re-sync: compare with
 `config/packages/monolog.yaml` when an extension registers a new channel.*

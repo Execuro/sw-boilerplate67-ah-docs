@@ -2,7 +2,7 @@
 # This folder is the site root: when it is published as its own repository
 # (Settings → Pages → Deploy from a branch → / (root)), this file is the site config.
 
-title: Shopware Project Wiki
+title: My Shopware Project Wiki
 description: What we built in this Shopware project, why, where it lives in the code, and how to run it.
 
 # Just the Docs gives the left sidebar navigation and search. It is not one of the themes selectable
@@ -16,9 +16,11 @@ plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
 
-# Project site served from https://<org>.github.io/<repo>/ — baseurl must match the repository name,
-# otherwise the theme's CSS and JS 404. Change it if the repository is renamed or a custom domain is used.
-baseurl: "/sw-boilerplate67-ah-docs"
+# A GitHub Pages *project* site (this folder published from a repo whose Pages URL is
+# https://<org>.github.io/<repo>/) needs baseurl set to "/<repo>", or the theme's CSS and JS 404.
+# A user/org site (repo named <org>.github.io) or a build via GitHub Actions needs it empty.
+# The scaffold cannot know the repository name — set this by hand after publishing.
+baseurl: ""
 
 # The sidebar hierarchy comes from each page's nav_order / parent / grand_parent front matter;
 # the layout is applied here so pages stay free of theme-specific keys.
@@ -37,9 +39,9 @@ heading_anchors: true
 back_to_top: true
 back_to_top_text: "Back to top"
 
-aux_links:
-  "Project repository": https://github.com/Execuro/sw-boilerplate67-ah
-aux_links_new_tab: true
+# aux_links:
+#   "Project repository": https://github.com/<org>/<repo>
+# aux_links_new_tab: true
 
 color_scheme: light
 

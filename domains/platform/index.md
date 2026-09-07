@@ -6,7 +6,7 @@ parent: Domains
 type: domain
 purpose: Cross-cutting application infrastructure shared by every business domain.
 scope: Extensions inventory, customization rules, configuration, logging, debugging, environments. No business features.
-last_synced: 2026-09-06
+last_synced: 2026-09-07
 verified_against: Shopware 6.7.13
 resync: Review after each Shopware upgrade or infrastructure change; each sub-page has its own resync rule.
 tags: [platform, infrastructure, index]
@@ -34,6 +34,6 @@ merchant or shopper can see belongs to a business domain, not here.
 
 ---
 
-*Scope: infrastructure and conventions only, no business features · Last synced: 2026-09-06 ·
+*Scope: infrastructure and conventions only, no business features · Last synced: 2026-09-07 ·
 Verified against Shopware 6.7.13 · Re-sync: walk the pages below after upgrades; `sw-document-feature`
 only touches the extensions inventory and configuration.*

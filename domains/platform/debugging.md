@@ -6,7 +6,7 @@ parent: Platform
 type: platform
 purpose: How to observe and debug this project locally, and where to look first for common failures.
 scope: Local development. Production incident handling lives in environments-and-deployment.md.
-last_synced: 2026-09-06
+last_synced: 2026-09-07
 verified_against: Shopware 6.7.13
 resync: Update when the local setup or tooling changes (see baseline/tech-stack.md).
 tags: [platform, debugging, profiler, xdebug]
@@ -18,15 +18,15 @@ Where to look first when something breaks locally, and which tool answers which 
 
 ## Tools
 
+<!-- Keep the generic Shopware tools; add the project's container/service names, ports and IDE settings once known. -->
+
 - **Symfony profiler** at `/_profiler` when `APP_ENV=dev`; Store API and Admin API requests appear there too.
-- **Adminer** at <http://127.0.0.1:9080> to inspect the database directly.
-- **Mailpit** at <http://127.0.0.1:8025> to see mail the application sent.
-- **LavinMQ management UI** at <http://127.0.0.1:15672> to inspect the message queue.
-- **Logs**: `var/log/` — see [Logging](logging.md).
+- **Logs**: see [Logging](logging.md).
 - **`bin/console`** for any CLI diagnostics (`bundle:dump`, `cache:clear`, `database:migrate`, …).
 - **shopware-cli**: `shopware-cli project ci` for the full lint/static-analysis run, `shopware-cli extension validate --full` per extension.
-- Xdebug config is not recorded in this project yet; the `docker-dev` web image ships it, but no
-  project-specific `XDEBUG_MODE` or IDE server name has been set up.
+
+Xdebug config is not recorded in this project yet — fill in the container, `XDEBUG_MODE`, and IDE
+server name once set up.
 
 ## Common failure lookups
 
@@ -51,5 +51,5 @@ Where to look first when something breaks locally, and which tool answers which 
 ---
 
 *Scope: local development, production incidents live in environments-and-deployment.md ·
-Last synced: 2026-09-06 · Verified against Shopware 6.7.13 · Re-sync: re-run each tip on a fresh
+Last synced: 2026-09-07 · Verified against Shopware 6.7.13 · Re-sync: re-run each tip on a fresh
 checkout after upgrades.*
