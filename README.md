@@ -49,6 +49,12 @@ sidebar. To keep the theme, either publish the wiki as its own repository (setup
 Source to **GitHub Actions** and point a Jekyll build at this folder (`actions/jekyll-build-pages`
 with `source: docs/project-wiki`).
 
+**The site renders as unstyled HTML — plain bullet lists and blue links?** The theme loaded but its
+assets 404'd: `baseurl` in `_config.yml` must be `/<repo>` for a project site
+(`https://<org>.github.io/<repo>/`), and empty only for a user/org site or an Actions build. The
+navigation still renders correctly in that state, so the page looks structurally right and entirely
+unstyled.
+
 ## Previewing locally
 
 ```sh

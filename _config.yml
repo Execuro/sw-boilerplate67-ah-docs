@@ -16,11 +16,12 @@ plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
 
-# A GitHub Pages *project* site (this folder published from a repo whose Pages URL is
-# https://<org>.github.io/<repo>/) needs baseurl set to "/<repo>", or the theme's CSS and JS 404.
-# A user/org site (repo named <org>.github.io) or a build via GitHub Actions needs it empty.
-# The scaffold cannot know the repository name — set this by hand after publishing.
-baseurl: ""
+# Published as a GitHub Pages *project* site at https://execuro.github.io/sw-boilerplate67-ah-docs/,
+# so baseurl must be "/<repo>" — the theme requests its CSS and JS relative to it, and an empty
+# value makes every asset 404 and the site render as unstyled HTML.
+# Only a user/org site (repo named <org>.github.io) or a build via GitHub Actions leaves it empty.
+baseurl: "/sw-boilerplate67-ah-docs"
+url: "https://execuro.github.io"
 
 # The sidebar hierarchy comes from each page's nav_order / parent / grand_parent front matter;
 # the layout is applied here so pages stay free of theme-specific keys.
